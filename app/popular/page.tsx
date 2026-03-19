@@ -1,4 +1,4 @@
-import getPopularMovies from "@/lib/tmbd"
+import {getPopularMovies }from "@/lib/tmbd"
 import MovieGrid from "@/components/movieGrid";
 
   
@@ -13,7 +13,7 @@ export default async function PopularPage() {
         <MovieGrid 
             movies={movies} 
             title="Popular Movies" 
-            descriptionMovie="The most watched movies right now" 
+             
         />
     </div>
 )
