@@ -1,5 +1,6 @@
 import {getPopularMovies }from "@/lib/tmbd"
 import MovieGrid from "@/components/movieGrid";
+import NavArrows from "@/components/NavArrows";
 
   
 
@@ -16,6 +17,8 @@ export default async function PopularPage() {
             category="popular"
              
         />
+        <NavArrows prev="/" next="/rated" />
+
     </div>
 )
 
