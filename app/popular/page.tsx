@@ -13,6 +13,7 @@ export default async function PopularPage() {
         <MovieGrid 
             movies={movies} 
             title="Popular Movies" 
+            category="popular"
              
         />
     </div>

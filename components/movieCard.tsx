@@ -2,9 +2,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { Movie } from "@/types"
 
-export default function MovieCard({ movie }: { movie: Movie }) {
+interface MovieCardProps{
+    movie: Movie
+    category: string
+}
+
+export default function MovieCard({ movie, category }: MovieCardProps) {
     return (
-        <Link href={`/popular/${movie.id}`}>
+        <Link href={`/${category}/${movie.id}`}>
             <div className="relative group cursor-pointer rounded-xl overflow-hidden">
                 <div className="relative w-full h-72">
                     <Image

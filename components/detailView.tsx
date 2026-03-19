@@ -22,8 +22,8 @@ export default function DetailView({ movie, director, cast, trailer, gallery }: 
                     className="object-cover"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-r from-black via-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
 
                 <div className="absolute inset-0 flex items-center">
                     <div className="max-w-6xl mx-auto px-8 w-full">

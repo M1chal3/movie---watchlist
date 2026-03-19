@@ -22,9 +22,35 @@ export  async function getPopularMovies(): Promise<Movie[]> {
    
 }
 
+export  async function getTopRatedMovies(): Promise<Movie[]> {
+ 
+
+    const res = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=' + process.env.TMDB_API_KEY, {
+       
+    });
+  const data: TMBDResponse = await res.json();
+
+  return data.results;
+   
+}
+
+export  async function getUpcomingMovies(): Promise<Movie[]> {
+ 
+
+    const res = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.TMDB_API_KEY}&region=US&language=en-US`, {
+       
+    });
+  const data: TMBDResponse = await res.json();
+  
+const today = new Date().toISOString().slice(0, 10)
+return data.results.filter((movie: Movie) => movie.release_date > today)
+
+   
+}
+
 export default async function getDetailedMovie(id: string): Promise<MovieDetails>{
 
-const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=` + process.env.TMDB_API_KEY, {
+const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.TMDB_API_KEY}&region=US&language=en-US`, {
        
     });
   const data: MovieDetails = await res.json();
